@@ -1,0 +1,19 @@
+language: node_js
+node_js:
+- '7.1'
+cache:
+  directories:
+  - node_modules
+  - "$HOME/.npm"
+  - "$HOME/.gem"
+before_install:
+- npm install -g gulp
+script:
+- gulp test
+- gulp
+deploy:
+  provider: npm
+  email: me@brianneisler.com
+  skip_cleanup: true
+  on:
+    tags: true
