@@ -27,6 +27,7 @@ npm-debug.log
 
 #mac
 .DS_Store
+!Icon
 
 #development
 dist

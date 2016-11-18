@@ -19,8 +19,10 @@
   },
   "homepage": "https://github.com/brianneisler/react-omni#readme",
   "dependencies": {
-    "mudash": "0.0.10",
-    "react-native-web": "0.0.49"
+    "mudash": "0.0.11",
+    "node-emoji": "^1.4.1",
+    "react-native-web": "0.0.49",
+    "recompose": "^0.20.2"
   },
   "devDependencies": {
     "babel-core": "^6.18.2",
@@ -34,11 +36,11 @@
     "eslint-plugin-react": "^6.7.1",
     "file-loader": "^0.9.0",
     "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
     "gulp-eslint": "^3.0.1",
     "gulp-mocha": "^3.0.0",
     "gulp-util": "^3.0.7",
     "html-webpack-plugin": "^2.24.1",
-    "mudash": "0.0.10",
     "react-omni-webpack-plugin": "0.0.1",
     "react-test-renderer": "^15.3.2",
     "url-loader": "^0.5.7",
