@@ -10,12 +10,12 @@ import {
 } from '../../dist'
 import App from './src/App'
 
-AppRegistry.registerComponent('moltres-website', () => App)
+AppRegistry.registerComponent('LandingPage', () => App)
 
 if (Platform.OS == 'web') {
   const app = document.createElement('div')
   document.body.appendChild(app)
-  AppRegistry.runApplication('moltres-website', {
+  AppRegistry.runApplication('LandingPage', {
     rootTag: app
   })
 }
