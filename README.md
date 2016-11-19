@@ -10,7 +10,6 @@ React framework for that works for both react and react-native
 [![Build Status](https://travis-ci.org/brianneisler/react-omni.svg)](https://travis-ci.org/brianneisler/react-omni)<br />
 [![NPM](https://nodei.co/npm/react-omni.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/react-omni/)
 
-
 ## Install
 
 ```bash
@@ -36,15 +35,17 @@ export default {
 }
 ```
 
-
 ## Usage
 
 ```js
 import { Icon, Text, View } from 'react-omni'
 
 ```
-
-
 ## Recompose helpers for styles
 
 - withStyles
+
+## Components
+* Alerts
+* Icons
+* Typography

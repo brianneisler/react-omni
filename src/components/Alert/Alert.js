@@ -41,7 +41,7 @@ const enhance = compose(
     },
     alertContent: {
       position: 'relative',
-      backgroundColor: Stylus.COLOR_PRIMARY,
+      backgroundColor: Stylus.COLOR_POSITIVE,
       paddingVertical: Stylus.GUTTER_LESS,
       paddingHorizontal: Stylus.GUTTER
     },

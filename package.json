@@ -4,6 +4,8 @@
   "description": "React framework for that works for both react and react-native",
   "main": "index.js",
   "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "webpack": "webpack-dev-server --port 3000 --config Examples/LandingPage/web/webpack.config.dev.babel.js --inline --hot --colors",
     "clean": "gulp clean",
     "cleanse": "gulp cleanse",
     "dev": "gulp dev",
@@ -41,6 +43,9 @@
     "gulp-mocha": "^3.0.0",
     "gulp-util": "^3.0.7",
     "html-webpack-plugin": "^2.24.1",
+    "json-loader": "^0.5.4",
+    "react": "15.3.2",
+    "react-native": "^0.37.0",
     "react-omni-webpack-plugin": "0.0.1",
     "react-test-renderer": "^15.3.2",
     "url-loader": "^0.5.7",
