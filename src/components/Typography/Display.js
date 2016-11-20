@@ -13,7 +13,6 @@ const enhance = compose(
 )
 
 const Display = enhance(({children, styles}) => {
-  console.log(styles)
   return (
     <Text style={styles.large}>{children}</Text>
   )

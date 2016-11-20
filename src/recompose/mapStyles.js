@@ -5,7 +5,7 @@ const mapStyles = stylesMapper => BaseComponent => {
   const factory = createEagerFactory(BaseComponent)
   return props => factory({
     ...props,
-    styles: stylesMapper(props)
+    styles: stylesMapper(props, props.styles || {})
   })
 }
 
