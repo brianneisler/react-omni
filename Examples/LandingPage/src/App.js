@@ -20,6 +20,15 @@ import {
 } from '../../../dist'
 
 export default class App extends Component {
+  constructor(props) {
+    super(props)
+    this.onPress = this.onPress.bind(this)
+  }
+
+  onPress() {
+    this.context.router.transitionTo('/hello')
+  }
+
   render() {
     return (
       <Navbar title={'Navbar'}>
@@ -48,7 +57,7 @@ export default class App extends Component {
             <Badge style={styles.badge} color={'positive'}>Positive</Badge>
             <Badge style={styles.badge} color={'negative'}>Negative</Badge>
           </View>
-          <Button title='Block Button' style={{marginBottom: 10}} onPress={() => console.log('Button pressed')} />
+          <Button title='Block Button' style={{marginBottom: 10}} onPress={this.onPress} />
           <View style={styles.inline}>
             <Button title='XL Button' style={styles.button} size={'xl'} />
             <Button title='LG Button' color={'secondary'} style={styles.button} size={'lg'} />
@@ -63,6 +72,8 @@ export default class App extends Component {
     )
   }
 }
+
+App.contextTypes = {router: React.PropTypes.object}
 
 const styles = StyleSheet.create({
   container: {
