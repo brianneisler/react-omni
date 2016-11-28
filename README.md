@@ -1,5 +1,6 @@
 # react-omni
 React framework for that works for both react and react-native
+Reactive Design Components
 
 ## Benefits
 - Uses only components supplied by [react-native-web](https://github.com/necolas/react-native-web) so all components in this library are compatible in both react-native and react

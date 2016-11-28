@@ -37,7 +37,9 @@ const ignores = {
     '!node_modules',
     '!node_modules/**',
     '!dist',
-    '!dist/**'
+    '!dist/**',
+    '!Examples',
+    '!Examples/**'
   ],
   babel: [
     '!**/tests/**'
