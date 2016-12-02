@@ -1,7 +1,8 @@
 import _ from 'mudash'
 import { PanResponder } from 'react-native'
 import createHelper from 'recompose/createHelper'
-import { compose, withHandlers, withProps, withPropsOnChange } from 'recompose'
+import { compose, withProps, withPropsOnChange } from 'recompose'
+import withHandlers from './withHandlers'
 
 const HANDLERS = [
   'onStartShouldSetPanResponder',
