@@ -1,7 +1,7 @@
 import _ from 'mudash'
 import { Component } from 'react'
-import createEagerFactory from './createEagerFactory'
-import createHelper from './createHelper'
+import { createEagerFactory } from 'recompose'
+import createHelper from 'recompose/createHelper'
 
 
 // const mapValues = (obj, func) => {

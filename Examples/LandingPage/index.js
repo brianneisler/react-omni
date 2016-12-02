@@ -12,18 +12,21 @@ import {
 import App from './src/App'
 import Hello from './src/Hello'
 import React from 'react'
-import {Match, MemoryRouter as Router} from 'react-router'
+import { Match, MemoryRouter, BrowserRouter } from 'react-router'
 
-const routes = (
-  <Router>
-    <View style={{flex: 1}}>
-      <Match exactly pattern='/' component={App}/>
-      <Match pattern='/hello' component={Hello}/>
-    </View>
-  </Router>
-)
+const Routes = () =>
+  <View style={{flex: 1}}>
+    <Match exactly pattern='/' component={App}/>
+    <Match pattern='/hello' component={Hello}/>
+  </View>
 
-AppRegistry.registerComponent('LandingPage', () => () => routes)
+AppRegistry.registerComponent('LandingPage', () => () => {
+  return (
+    Platform.OS === 'web' ?
+      <BrowserRouter><Routes /></BrowserRouter>
+    : <MemoryRouter><Routes /></MemoryRouter>
+  )
+})
 
 if (Platform.OS == 'web') {
   const app = document.createElement('div')

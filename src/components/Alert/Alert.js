@@ -24,10 +24,10 @@ const enhance = compose(
     toggle: () => setVisible((visible) => !visible)
   })),
   withHandlers({
-    handleClosePress: ({ hide, onClosePress }) => () => {
-      hide()
-      if (onClosePress) {
-        onClosePress()
+    handleClosePress: (props) => () => {
+      props.hide()
+      if (props.onClosePress) {
+        props.onClosePress()
       }
     }
   }),

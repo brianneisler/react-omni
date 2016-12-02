@@ -20,13 +20,16 @@ import path from 'path'
 
 const sources = {
   babel: [
-    'src/**'
+    'src/**/*.js'
   ],
   lint: [
     '**/*.js'
   ],
   tests: [
     '**/__tests__/*.js'
+  ],
+  asset: [
+    'src/**/*.{png,jpg}'
   ]
 }
 
@@ -81,20 +84,26 @@ gulp.task('prod', ['babel'])
 
 gulp.task('dev', ['build', 'build-watch'])
 
-gulp.task('build', ['babel'])
+gulp.task('build', ['babel', 'asset'])
 
 gulp.task('build-watch', ['babel-watch'])
 
 gulp.task('test', ['lint', 'mocha'])
+
+gulp.task('asset', () => {
+  return gulp.src(getSources('asset'))
+    .pipe(gulp.dest('./dist'))
+    .on('error', (error) => {
+      util.log(error)
+    })
+})
 
 gulp.task('babel', () => {
   return gulp.src(getSources('babel'))
     .pipe(sourcemaps.init({
       loadMaps: true
     }))
-    .pipe(babel({
-      presets: ['react-native']
-    }))
+    .pipe(babel())
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('./dist'))
     .on('error', (error) => {

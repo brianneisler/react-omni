@@ -4,14 +4,13 @@ import React, { PropTypes } from 'react'
 import { Text, TouchableOpacity } from 'react-native'
 import { compose, defaultProps, setPropTypes } from 'recompose'
 import { defaultStyles, withStyles } from '../../recompose'
-import * as Stylus from '../../styles/constants'
+import { Colors, Fonts, Spacing } from '../styles'
 
 const enhance = compose(
   defaultProps({
     onPress: _.noop
   }),
   setPropTypes({
-    //onPress: PropTypes.function,
     size: PropTypes.number,
     styles: PropTypes.object,
     tintColor: PropTypes.string,
@@ -19,11 +18,11 @@ const enhance = compose(
   }),
   defaultStyles({
     icon: {
-      padding: Stylus.GUTTER_MINI
+      padding: Spacing.gutterMini
     },
     iconText: {
-      color: Stylus.GRAY_LIGHTER,
-      fontSize: Stylus.FONT_SIZE_LG
+      color: Colors('grayLighter'),
+      fontSize: Fonts.fontSizeBase
     }
   }),
   withStyles(({ size, tintColor }) => {
