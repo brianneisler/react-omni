@@ -9,8 +9,8 @@ const enhance = compose(
     subheader: {
       backgroundColor: Colors('grayLightest'),
       paddingHorizontal: Spacing.gutter,
-      paddingVertical: Spacing.gutterLess,
-      marginBottom: Spacing.gutter
+      paddingVertical: Spacing.gutter
+      // marginBottom: Spacing.gutter
     },
     subheaderText: {
       color: Colors('gray'),

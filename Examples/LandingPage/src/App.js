@@ -15,9 +15,11 @@ import {
   Avatar,
   Subheader,
   Badge,
+  ListItem,
   ScrollView,
   Button,
-  Navbar
+  Navbar,
+  TextField
 } from '../../../dist'
 
 export default class App extends Component {
@@ -32,7 +34,20 @@ export default class App extends Component {
 
   render() {
     return (
-      <Drawer>
+      <Drawer content={
+        <View>
+          <Subheader style={{backgroundColor: 'transparent'}}>Typography</Subheader>
+          <ListItem heading={'Display'}/>
+          <ListItem heading={'Paragraph'}/>
+          <Divider inset={0} />
+          <Subheader style={{backgroundColor: 'transparent'}}>Components</Subheader>
+          <ListItem heading={'Avatar'}/>
+          <ListItem heading={'Badges'}/>
+          <ListItem heading={'Buttons'}/>
+          <ListItem heading={'Divider'}/>
+          <ListItem heading={'TextField'}/>
+        </View>
+      }>
         <Navbar title={'React Omni'}>
           <ScrollView style={styles.container}>
             <View>
@@ -69,6 +84,8 @@ export default class App extends Component {
             </View>
             <Subheader>Divider</Subheader>
             <Divider />
+            <Subheader>TextField</Subheader>
+            <TextField label={'Field Label'} />
           </ScrollView>
         </Navbar>
       </Drawer>

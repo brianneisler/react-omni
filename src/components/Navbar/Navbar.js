@@ -12,8 +12,7 @@ const enhance = compose(
   defaultStyles({
     wrapper: {
       flex: 1,
-      paddingTop: Platform.OS === 'web' ? 50 : 70,
-      marginLeft: 300
+      paddingTop: Platform.OS === 'web' ? 50 : 60
     },
     navbar: {
       backgroundColor: Colors('grayLighter'),
@@ -69,7 +68,7 @@ const enhance = compose(
 
 const Navbar = enhance(({children, styles, title, onLeftButtonPress}) => {
   return (
-    <View>
+    <View style={styles.wrapper}>
       <Animated.View style={[styles.navbar]}>
         <TouchableOpacity onPress={onLeftButtonPress} style={styles.leftButton}>
           <Image source={require('./menu_burger.png')} style={styles.iconMenu}/>

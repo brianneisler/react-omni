@@ -22,7 +22,7 @@ const defaultCreateHandler = (props, handlerName) => props[handlerName]
 
 
 const withHandlers = (handlers, cachedHandlers = {}) => BaseComponent => {
-
+  console.log(handlers);
   const factory = createEagerFactory(BaseComponent)
   return class extends Component {
     handlers = _.map(

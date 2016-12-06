@@ -1,7 +1,7 @@
 import React from 'react'
 import { Text, TouchableHighlight, View } from 'react-native'
 import { compose, defaultProps, withHandlers } from 'recompose'
-import { defaultStyles } from '../recompose'
+import { defaultStyles } from '../../recompose'
 import { Para } from '../Typography'
 import { Colors, Fonts, Spacing } from '../styles'
 
@@ -9,18 +9,15 @@ const enhance = compose(
   defaultProps({
     leftIcon: null,
     rightIcon: null,
-    heading: '',
-    text: '',
     onPress: () => {},
-    underlayColor: Colors.grayLightest
+    underlayColor: Colors('grayLightest')
   }),
   defaultStyles({
     listItem: {
-      flex: 1,
       flexDirection: 'row',
       alignItems: 'center',
       paddingHorizontal: Spacing.gutter,
-      paddingVertical: Spacing.gutter
+      paddingVertical: Spacing.gutterLess
     },
     leftIcon: {
       alignSelf: 'flex-start',
@@ -46,37 +43,29 @@ const enhance = compose(
     }
   }),
   withHandlers({
-    handlePress: props => event => {
+    handlePress: (props) => (event) => {
       event.preventDefault()
     }
   })
 )
 
-const ListItem = enhance(({styles, underlayColor, handlePress, heading, leftIcon, text, rightIcon}) => {
+const ListItem = enhance(({styles, underlayColor, handlePress, heading, leftIcon, text, rightIcon}) =>
   <TouchableHighlight
     underlayColor={underlayColor}
     onPress={handlePress}>
     <View style={styles.listItem}>
-    {
-      leftIcon &&
-      <View style={styles.leftIcon}>{leftIcon}</View>
-    }
-
-    <View style={styles.body}>
-    {
-      heading && <Display style={styles.heading}>{heading}</Display>
-    }
-    {
-      text && <Para style={styles.text}>{text}</Para>
-    }
-    </View>
-
-    {
-      rightIcon &&
-      <View style={styles.listItem_rightIcon}>{rightIcon}</View>
-    }
+      { leftIcon &&
+        <View style={styles.leftIcon}>{leftIcon}</View>
+      }
+      <View style={styles.body}>
+      { heading && <Text style={styles.heading}>{heading}</Text> }
+      { text && <Para style={styles.text}>{text}</Para> }
+      </View>
+      { rightIcon &&
+        <View style={styles.listItem_rightIcon}>{rightIcon}</View>
+      }
     </View>
   </TouchableHighlight>
-})
+)
 
 export default ListItem

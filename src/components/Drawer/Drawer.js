@@ -60,30 +60,31 @@ const enhance = compose(
       drawer
     }
   }),
-  withPanResponder({
-    onStartShouldSetPanResponder: (event, gesture) => {
-      console.log('onStartShouldSetPanResponder')
-    },
-    onPanResponderGrant: (event, gesture) => {
-      console.log('onPanResponderGrant')
-    },
-    onPanResponderTerminate: (event, gesture) => {
-      console.log('onPanResponderTerminate')
-    },
-    onPanResponderRelease: (event, gesture) => {
-      console.log('onPanResponderRelease')
-    }
-  })
+  // withPanResponder({
+  //   onStartShouldSetPanResponder: (event, gesture) => {
+  //     console.log('onStartShouldSetPanResponder')
+  //   },
+  //   onPanResponderGrant: (event, gesture) => {
+  //     console.log('onPanResponderGrant')
+  //   },
+  //   onPanResponderTerminate: (event, gesture) => {
+  //     console.log('onPanResponderTerminate')
+  //   },
+  //   onPanResponderRelease: (event, gesture) => {
+  //     console.log('onPanResponderRelease')
+  //   }
+  // })
 )
 
-const Drawer = enhance(({children, panResponder, open, toggleDrawer, styles}) => {
+const Drawer = enhance(({children, content, open, toggleDrawer, styles}) => {
+  const panResponder = {}
   return (
     <View style={styles.wrapper}>
       { open &&
         <View style={styles.overlay} />
       }
       <View style={[styles.drawer]} {...panResponder.panHandlers}>
-        <Text>Drawer</Text>
+        {content}
         <Text onPress={toggleDrawer}>Close</Text>
       </View>
       {children}
