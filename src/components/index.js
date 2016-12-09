@@ -1,6 +1,6 @@
 // export { default as Alert } from './Alert'
 export { Avatar } from './Avatar'
-export { Badge } from './Badges'
+export { Badge } from './Badge'
 export { Button } from './Buttons'
 export { Divider } from './Divider'
 export { Drawer } from './Drawer'

@@ -3,8 +3,7 @@ import createHelper from 'recompose/createHelper'
 import mapStyles from './mapStyles'
 
 const defaultStyles = input =>
-  mapStyles(props => {
-    const styles = _.get(props, 'styles', {})
+  mapStyles((props, styles) => {
     return _.assocWith(
       (
         _.isFunction(input)

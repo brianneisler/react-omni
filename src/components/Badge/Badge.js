@@ -1,7 +1,7 @@
 import React from 'react'
 import {View, Text} from 'react-native'
 import {compose, defaultProps} from 'recompose'
-import {defaultStyles} from '../../recompose'
+import { defaultStyles } from '../../recompose'
 import {Borders, Colors, Fonts, Spacing} from '../styles'
 
 const enhance = compose(
@@ -26,14 +26,14 @@ const enhance = compose(
   }))
 )
 
-const Badges = enhance(({children, style, styles}) => {
+const Badge = enhance(({children, style, styles}) => {
   return (
     <View style={[styles.badge, style]}>
       <Text style={styles.text}>
-      {children}
+        {children}
       </Text>
     </View>
   )
 })
 
-export default Badges
+export default Badge

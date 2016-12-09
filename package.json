@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/brianneisler/react-omni#readme",
   "dependencies": {
-    "mudash": "0.0.11",
+    "mudash": "^0.3.1",
     "node-emoji": "^1.4.1",
     "react-native-web": "0.0.51",
     "recompose": "^0.20.2"

@@ -22,6 +22,30 @@ import {
   TextField
 } from '../../../dist'
 
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#F5FCFF',
+    padding: 10
+  },
+  inline: {
+    flexDirection: 'row',
+    marginBottom: 10,
+    flexWrap: 'wrap',
+    alignItems: 'flex-start'
+  },
+  avatar: {
+    marginRight: 10
+  },
+  badge: {
+    marginRight: 10
+  },
+  button: {
+    marginRight: 10,
+    marginBottom: 10
+  }
+})
+
 export default class App extends Component {
   constructor(props) {
     super(props)
@@ -33,6 +57,7 @@ export default class App extends Component {
   }
 
   render() {
+    console.log(styles)
     return (
       <Drawer content={
         <View>
@@ -94,27 +119,3 @@ export default class App extends Component {
 }
 
 App.contextTypes = {router: React.PropTypes.object}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#F5FCFF',
-    padding: 10
-  },
-  inline: {
-    flexDirection: 'row',
-    marginBottom: 10,
-    flexWrap: 'wrap',
-    alignItems: 'flex-start'
-  },
-  avatar: {
-    marginRight: 10
-  },
-  badge: {
-    marginRight: 10
-  },
-  button: {
-    marginRight: 10,
-    marginBottom: 10
-  }
-})

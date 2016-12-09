@@ -3,26 +3,9 @@ import { Component } from 'react'
 import { createEagerFactory } from 'recompose'
 import createHelper from 'recompose/createHelper'
 
-
-// const mapValues = (obj, func) => {
-//   const result = []
-//   let i = 0
-//   /* eslint-disable no-restricted-syntax */
-//   for (const key in obj) {
-//     if (obj.hasOwnProperty(key)) {
-//       i += 1
-//       result[key] = func(obj[key], key, i)
-//     }
-//   }
-//   /* eslint-enable no-restricted-syntax */
-//   return result
-// }
-
 const defaultCreateHandler = (props, handlerName) => props[handlerName]
 
-
 const withHandlers = (handlers, cachedHandlers = {}) => BaseComponent => {
-  console.log(handlers);
   const factory = createEagerFactory(BaseComponent)
   return class extends Component {
     handlers = _.map(
@@ -44,7 +27,7 @@ const withHandlers = (handlers, cachedHandlers = {}) => BaseComponent => {
           process.env.NODE_ENV !== 'production' &&
           typeof handler !== 'function'
         ) {
-          console.error(
+          console.error( //eslint-disable-line no-console
             'withHandlers(): Expected a map of higher-order functions. ' +
             'Refer to the docs for more info.'
           )
@@ -54,7 +37,7 @@ const withHandlers = (handlers, cachedHandlers = {}) => BaseComponent => {
       }
     );
 
-    cachedHandlers = {};
+    cachedHandlers = {}
 
     componentWillMount() {
       this.cachedHandlers = _.isFunction(cachedHandlers)
